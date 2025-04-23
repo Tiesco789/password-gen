@@ -1,0 +1,33 @@
+<div class="container">
+  <img src="" alt="">
+  <h1>Gerador de senhas</h1>
+  <p>Tamanho minimo: 8 caracteres</p>
+  <p>Tamanho máximo: 32 caracteres</p>
+
+  <mat-slider min="8" max="32" step="1" showTickMarks discrete [displayWith]="formatLabel">
+    <input matSliderThumb>
+  </mat-slider>
+
+  <div class="checkboxes-container">
+    <mat-button-toggle-group multiple>
+      <mat-button-toggle value="letras-maiusculas">Letras</mat-button-toggle>
+      <mat-button-toggle value="numeros">Números</mat-button-toggle>
+      <mat-button-toggle value="simbolos">Símbolos</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <button mat-fab extended>
+    <mat-icon>lock</mat-icon>
+    Gerar Senha
+  </button>
+
+  <mat-card appearance="outlined">
+    <mat-card-content>
+      Simple card
+      <input #message hidden>
+      <button mat-icon-button matTooltip="Copiar Senha" (click)="openSnackBar()">
+        <mat-icon>content_copy</mat-icon>
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>
