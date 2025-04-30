@@ -1,27 +1,44 @@
-# PasswordGen
+# 🔐 Gerador de Senhas com Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
+Desafio 2/10
 
-## Development server
+Este é um aplicativo simples de de gerador de senhas criado com **Angular** e **Angular Material**, onde o usuário pode gerar uma senha aleatória entre 8 a 32 caracteres podendo incluir Letras Maiúsculas, Minúsculas, Números e Símbolos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Funcionalidades
 
-## Code scaffolding
+- ✅ Gerar nova senha
+- 🅰️ Selecionar quais letras, caracteres e simbolos pode estar na senha
+- 📝Botão para copiar senha gerada
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 📦 Tecnologias usadas
 
-## Build
+- [Angular](https://angular.io/)
+- [Angular Material](https://material.angular.io/)
+- TypeScript
+- HTML / CSS
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🧑‍💻 Instalação
 
-## Running unit tests
+1. Clone o repositório:
+```bash
+git clone https://github.com/Tiesco789/password-gen.git
+cd password-gen
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Instale as dependências:
+```bash
+npm install
+```
 
-## Running end-to-end tests
+3. Rode o servidor de desenvolvimento:
+```bash
+ng serve
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. Acesse em `http://localhost:4200`
 
-## Further help
+📸 Prévia
+![IMG](image.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🧙‍♂️ Autor
+Feito com 💙 por Franccesco Bordon

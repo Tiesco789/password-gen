@@ -1,32 +1,31 @@
 <div class="container">
-  <img src="" alt="">
-  <h1>Gerador de senhas</h1>
-  <p>Tamanho minimo: 8 caracteres</p>
-  <p>Tamanho máximo: 32 caracteres</p>
+  <h3>Gerador de senhas</h3>
 
-  <mat-slider min="8" max="32" step="1" showTickMarks discrete [displayWith]="formatLabel">
+  <mat-slider min="8" max="32" step="1" showTickMarks discrete [displayWith]="formatLabel"
+    (input)="onPasswordLengthChange($event)">
     <input matSliderThumb>
   </mat-slider>
+  <p>Comprimento da senha: {{ this.passwordLength }} caracteres</p>
 
-  <div class="checkboxes-container">
-    <mat-button-toggle-group multiple>
-      <mat-button-toggle value="letras-maiusculas">Letras</mat-button-toggle>
-      <mat-button-toggle value="numeros">Números</mat-button-toggle>
-      <mat-button-toggle value="simbolos">Símbolos</mat-button-toggle>
+  <div class="btn-group">
+    <mat-button-toggle-group multiple class="btn-group-toggle" (change)="onToggleChange($event)">
+      <mat-button-toggle matTooltip="Letras Maiúsculas" value="uppercase">AAA</mat-button-toggle>
+      <mat-button-toggle matTooltip="Letras Minúsculas" value="lowercase">aaa</mat-button-toggle>
+      <mat-button-toggle matTooltip="Números" value="numbers">123</mat-button-toggle>
+      <mat-button-toggle matTooltip="Caracteres Especiais" value="symbols">#$%</mat-button-toggle>
     </mat-button-toggle-group>
+    <button mat-flat-button (click)="generatePassword()">
+      <mat-icon>vpn_key</mat-icon>
+      Gerar Senha
+    </button>
   </div>
 
-  <button mat-fab extended>
-    <mat-icon>lock</mat-icon>
-    Gerar Senha
-  </button>
-
-  <mat-card appearance="outlined">
-    <mat-card-content>
-      Simple card
-      <input #message hidden>
-      <button mat-icon-button matTooltip="Copiar Senha" (click)="openSnackBar()">
-        <mat-icon>content_copy</mat-icon>
+  <mat-card appearance="outlined" class="card">
+    <mat-card-content class="card-content">
+      {{ this.generatedPassword }}
+      <button mat-icon-button matTooltip="Copiar Senha" (click)="copyPasswordToClipboard()"
+        [disabled]="!generatedPassword">
+        <mat-icon class="content_copy">content_copy</mat-icon>
       </button>
     </mat-card-content>
   </mat-card>
